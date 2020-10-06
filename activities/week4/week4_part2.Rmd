@@ -54,13 +54,45 @@ cap = paste("**Figure 1.** *Proportion of homes with internet access in each",
 # Remove comments to plot and save
 #ggsave(p1, 'w4_p2_q1_plot.png')
 #p1
+
+p1 = plot_data %>% 
+  filter(rurality != "diff") %>% 
+  ggplot( mapping = aes(x = est, y = division, color = rurality)) +
+  geom_point(position = position_dodge2(width = 0.5)) +
+  geom_errorbarh( aes(xmin = lwr, xmax = upr),
+                  position = position_dodge(width = 0.5),
+                  height = 0.75,
+                  alpha = 0.75) + 
+  theme_bw() +
+  xlab('Proportion of homes with internet access.') +
+  ylab('division') +
+  scale_color_manual( 
+    values = c('red3','darkblue')
+  )
+ggsave(p1, filename='w4_p2_q1_plot.png', device="png")
+p1
 ```
 
 2. Write code where indicated to match the second figure included in the README.
 ```{r q2_fig2, fig.cap = cap, message = FALSE}
 cap = paste("**Figure 2.** *Difference (urban less rural) in proportion of",
   "homes with internet access in each Census Division.*")
-
+p2 = plot_data %>% 
+  filter(rurality == "diff") %>% 
+  ggplot( mapping = aes(x = est, y = division)) +
+  geom_point(position = position_dodge2(width = 0.5)) +
+  geom_errorbarh( aes(xmin = lwr, xmax = upr),
+                  position = position_dodge(width = 0.5),
+                  height = 0.75,
+                  alpha = 0.75) + 
+  geom_vline(xintercept = 0, linetype = "dashed") +
+  theme_bw() +
+  xlab('Difference in proportion of homes with internet access.') +
+  ylab('division')
+  
+# Remove comments to plot and save
+ggsave(p2, filename = 'w4_p2_q2_plot.png', device = "png")
+p2
 # Use ggplot to produce a figure `p2` matching what is shown using the
 #  data above. 
 #p2 = 
