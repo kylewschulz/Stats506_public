@@ -18,3 +18,6 @@ CHEN:
 KYLE: https://github.com/kylewschulz/Stats506_public/
 YANHAN: https://github.com/yanhan-si/Stats506_public /
 MOEKI: https://github.com/mk-repos/Stats506_public /
+
+# GROUP PROJECT
+https://github.com/skorsu/Stats506_Project
