@@ -21,3 +21,9 @@ MOEKI: https://github.com/mk-repos/Stats506_public /
 
 # GROUP PROJECT
 https://github.com/skorsu/Stats506_Project
+
+PROJECT MEMBERS: 
+
+ERIN: https://github.com/ecikanek/Stats506_public 
+
+SUPPAPAT: https://github.com/skorsu/Stats506_public 
